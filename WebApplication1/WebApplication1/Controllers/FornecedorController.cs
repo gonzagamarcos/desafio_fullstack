@@ -70,7 +70,7 @@ namespace WebApplication1.Controllers
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine("Erro ao consultar empresa: " + ex.Message);
+                Console.WriteLine("Erro ao consultar forncedor: " + ex.Message);
             }
 
             return new JsonResult(table);
@@ -87,7 +87,7 @@ namespace WebApplication1.Controllers
                 using MySqlConnection connection = new MySqlConnection(connectionString);
                 connection.Open();
 
-                string query = "UPDATE forncedores SET codigo = @codigo, nome = @nome, cep = @cep, id = @id, datanascimento = @datanascimento WHERE id_empresa = @id_empresa";
+                string query = "UPDATE forncedores SET codigo = @codigo, nome = @nome, cep = @cep, id = @id, datanascimento = @datanascimento WHERE id_fornecedor = @id";
                 using MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@codigo", fornecedor.Codigo);
                 cmd.Parameters.AddWithValue("@nome", fornecedor.Nome);
@@ -101,7 +101,7 @@ namespace WebApplication1.Controllers
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine("Erro ao consultar empresa: " + ex.Message);
+                Console.WriteLine("Erro ao consultar fornecedor: " + ex.Message);
             }
 
             return new JsonResult("Cadastro Alterado com Sucesso!");

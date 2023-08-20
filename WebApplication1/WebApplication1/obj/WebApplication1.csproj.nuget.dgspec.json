@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marcos\\Documents\\Projetos Github\\Desafio_Acc\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
+    "C:\\Users\\marcos\\Documents\\Projetos Github\\desafio_fullstack\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marcos\\Documents\\Projetos Github\\Desafio_Acc\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
+    "C:\\Users\\marcos\\Documents\\Projetos Github\\desafio_fullstack\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marcos\\Documents\\Projetos Github\\Desafio_Acc\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "C:\\Users\\marcos\\Documents\\Projetos Github\\desafio_fullstack\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "C:\\Users\\marcos\\Documents\\Projetos Github\\Desafio_Acc\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "C:\\Users\\marcos\\Documents\\Projetos Github\\desafio_fullstack\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\marcos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marcos\\Documents\\Projetos Github\\Desafio_Acc\\WebApplication1\\WebApplication1\\obj\\",
+        "outputPath": "C:\\Users\\marcos\\Documents\\Projetos Github\\desafio_fullstack\\WebApplication1\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marcos\\AppData\\Roaming\\NuGet\\NuGet.Config",

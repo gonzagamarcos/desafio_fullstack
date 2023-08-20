@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DQV94V/VrPyNEubmxq2+zgaBJpwZnR9lBMtHp8qOO2zShgrmG/MDAbFSCBTIs4qNi9dgnitwo2iQ9pH8EsFw1A==",
+  "dgSpecHash": "fmpEdAKYwLLCOcd4N0E5bIRxfCIgiZpU3lfunZHMwFk8t6bNQtoie5Y+tLsnsqAY4lLuCCHS8XaLoj6lqGtQOQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\marcos\\Documents\\Projetos Github\\Desafio_Acc\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\Users\\marcos\\Documents\\Projetos Github\\desafio_fullstack\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marcos\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\marcos\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.21\\microsoft.aspnetcore.jsonpatch.6.0.21.nupkg.sha512",

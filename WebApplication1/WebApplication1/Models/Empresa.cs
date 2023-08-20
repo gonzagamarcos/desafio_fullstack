@@ -13,6 +13,7 @@ namespace WebApplication1.Models
         public string Codigo { get; set; }
         public string Nome { get; set; }
         public string Cep { get; set; }
+        public object? Id { get; internal set; }
 
         public Empresa(string codigo, string nome, string cep)
         {
