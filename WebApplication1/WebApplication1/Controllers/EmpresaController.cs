@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using MySqlConnector;
 using System.Data;
+using System.Runtime.ConstrainedExecution;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
@@ -17,28 +19,34 @@ namespace WebApplication1.Controllers
             MySqlConection = configuration.GetConnectionString("DefaultConnection");
         }
         //Função para inserir o cadastro das empresas no banco de dados MySQL
-        public void InserirEmpresa(string connectionString, string codigo, string nome, string cep)
+        [HttpPost]
+        public JsonResult Post (Empresa empresa)
         {
+            DataTable table = new DataTable();
             try
             {
+                string connectionString = Configuration.GetConnectionString("DefaultConnection");
                 using MySqlConnection connection = new MySqlConnection(connectionString);
                 connection.Open();
 
                 string query = "INSERT INTO empresas (codigo, nome, cep) VALUES (@codigo, @nome, @cep)";
 
                 using MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@codigo", codigo);
-                cmd.Parameters.AddWithValue("@nome", nome);
-                cmd.Parameters.AddWithValue("@cep", cep);
+                cmd.Parameters.AddWithValue("@codigo", empresa.Codigo);
+                cmd.Parameters.AddWithValue("@nome", empresa.Nome);
+                cmd.Parameters.AddWithValue("@cep", empresa.Cep);
 
-                cmd.ExecuteNonQuery();
-
-                Console.WriteLine("Empresa Cadastrada com Sucesso!");
+                using MySqlCommand command = new MySqlCommand(query, connection);
+                table.Load(command.ExecuteReader());
+                connection.Close();
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine("Erro ao Inserir Empresa: " + ex.Message);
+                Console.WriteLine("Erro ao consultar empresa: " + ex.Message);
             }
+
+            return new JsonResult("Cadastro Adicionado com Sucesso!");
+            
         }
 
         // Função para consultar as empresas no banco de dados MySQL
@@ -66,49 +74,61 @@ namespace WebApplication1.Controllers
             return new JsonResult(table);
         }
 
-        public void AlterarEmpresa(string connectionString, int id_empresa, string codigo, string nome, string cep)
+        // Função para alterar as fornecedores no banco de dados MySQL
+        [HttpPut] 
+        public JsonResult Put(Empresa empresa)
         {
+            DataTable table = new DataTable();
             try
             {
+                string connectionString = Configuration.GetConnectionString("DefaultConnection");
                 using MySqlConnection connection = new MySqlConnection(connectionString);
                 connection.Open();
 
                 string query = "UPDATE empresas SET codigo = @codigo, nome = @nome, cep = @cep WHERE id_empresa = @id_empresa";
                 using MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@id_empresa", id_empresa);
-                cmd.Parameters.AddWithValue("@codigo", codigo);
-                cmd.Parameters.AddWithValue("@nome", nome);
-                cmd.Parameters.AddWithValue("@cep", cep);
-                cmd.ExecuteNonQuery();
-                Console.WriteLine("Nome da Empresa Alterado com Sucesso!");
+                cmd.Parameters.AddWithValue("@id_empresa", empresa.Id);
+                cmd.Parameters.AddWithValue("@codigo", empresa.Codigo);
+                cmd.Parameters.AddWithValue("@nome", empresa.Nome);
+                cmd.Parameters.AddWithValue("@cep", empresa.Cep);
 
-
+                using MySqlCommand command = new MySqlCommand(query, connection);
+                table.Load(command.ExecuteReader());
+                connection.Close();
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine("Erro ao Atualizar Empresa: " + ex.Message);
-
+                Console.WriteLine("Erro ao consultar empresa: " + ex.Message);
             }
+
+            return new JsonResult("Cadastro Alterado com Sucesso!");            
         }
 
         // Função para deletar as empresas no banco de dados MySQL
-        public void DeletarEmpresa(string connectionString, int id_empresa)
+        [HttpDelete]
+        public JsonResult Delete(Empresa empresa)
         {
+            DataTable table = new DataTable();
             try
             {
+                string connectionString = Configuration.GetConnectionString("DefaultConnection");
                 using MySqlConnection connection = new MySqlConnection(connectionString);
                 connection.Open();
 
                 string query = "DELETE FROM empresas WHERE id_empresa = @id_empresa";
                 using MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@id_empresa", id_empresa);
-                cmd.ExecuteNonQuery();
-                Console.WriteLine("Empresa Deletada com Sucesso!");
+                cmd.Parameters.AddWithValue("@id_empresa", empresa.Id);
+                using MySqlCommand command = new MySqlCommand(query, connection);
+                table.Load(command.ExecuteReader());
+                connection.Close();
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine("Erro ao Deletar Empresa: " + ex.Message);
+                Console.WriteLine("Erro ao consultar empresa: " + ex.Message);
             }
+
+            return new JsonResult("Cadastro Deletado com Sucesso!");
+            
         }
     }
 }
