@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34009.444
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{B9418CBA-E5EB-4E64-9D47-37B197E91E6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frontEnd", "frontEnd", "{C5F05622-78BA-4F4A-8D24-51060AA5732F}"
+	ProjectSection(SolutionItems) = preProject
+		..\ui\app.js = ..\ui\app.js
+		..\ui\home.js = ..\ui\home.js
+		..\ui\fornecedor.js = ..\ui\fornecedor.js
+		..\ui\empresa.js = ..\ui\empresa.js
+		..\ui\index.html = ..\ui\index.html
+		..\ui\variables.js = ..\ui\variables.js
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9418CBA-E5EB-4E64-9D47-37B197E91E6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9418CBA-E5EB-4E64-9D47-37B197E91E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9418CBA-E5EB-4E64-9D47-37B197E91E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9418CBA-E5EB-4E64-9D47-37B197E91E6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E78FA0A5-8C0D-49E8-A6ED-F7A49859E85C}
+	EndGlobalSection
+EndGlobal
